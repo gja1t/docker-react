@@ -16,6 +16,7 @@ RUN npm run build
 
 # Second FROM statement means new phase (first phase is called "builder"
 FROM nginx
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # Nothing needed to start nginx because is already in base nginx container
